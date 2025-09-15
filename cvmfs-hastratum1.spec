@@ -1,6 +1,6 @@
 Summary: Scripts for managing a Highly Available CVMFS Stratum1 pair of machines
 Name: cvmfs-hastratum1
-Version: 3.2
+Version: 3.3
 # The release_prefix macro is used in the OBS prjconf, don't change its name
 %define release_prefix 1
 Release: %{release_prefix}%{?dist}
@@ -44,6 +44,9 @@ find /var/log/cvmfs -name '*.log-*' ! -name "*.gz" | xargs --no-run-if-empty gzi
 %ghost /var/lib/cvmfs-hastratum1/*
 
 %changelog
+* Mon Sep 15 2025 Dave Dykstra <dwd@fnal.gov> 3.3-1
+- Add "-f" to the "gc -a" in cvmfsha-gc-all.
+
 * Mon Jul 14 2025 Dave Dykstra <dwd@fnal.gov> 3.2-1
 - Prefer the pcs node with the IPaddr2 resource in cvmfsha-is-master,
   or otherwise the one running the cvmfsha-push-abort resource.
