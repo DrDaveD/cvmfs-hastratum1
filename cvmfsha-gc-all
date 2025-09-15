@@ -1,4 +1,4 @@
 #!/bin/bash
 # Note that nothing should go to stdout or stderr; this command 
 #  writes its output to /var/log/cvmfs/gc.log
-exec cvmfs_server gc -a
+exec cvmfs_server gc -af
